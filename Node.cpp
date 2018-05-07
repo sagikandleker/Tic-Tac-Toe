@@ -29,3 +29,35 @@ void Node::setSymbol(char value){
 
 }
 
+char Node::operator=(Node& n){
+    return n.symbol;
+}
+
+Node& Node::operator=(char value){
+    if(value != 'X' && value != 'O')
+	{
+		throw IllegalCharException(value);
+	}
+    else
+    {
+        this->symbol = value;
+    }
+    return *this;
+}
+
+Node& Node::operator=(int value){
+    if(value != 88 && value != 79)
+	{
+		throw IllegalCharException(value);
+	}
+    else
+    {
+        this->symbol = value;
+    }
+    return *this;
+}
+
+Node& Node::operator=(const Node& n){
+    this->symbol = n.symbol;
+    return *this;
+}
