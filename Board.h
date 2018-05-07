@@ -31,6 +31,10 @@ public:
 
 	friend ostream& operator<<(ostream& os, Board const &b);
 	friend bool operator==(const Node& n, char value);
+
+	bool emptyBoard(const Board& db);
+
+	bool operator==(const Board& db);
 };
 
 inline ostream& operator<<(ostream& os, Board const &b) {

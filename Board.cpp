@@ -38,6 +38,22 @@ int Board::getSize() const{
 	return this->size;
 }
 
+bool emptyBoard(const Board& db){
+
+	for(int i = 0; i < db.getSize(); i++)
+		{
+			for(int j = 0; j < db.getSize(); j++)
+			{
+				if(db.mat[i][j].getSymbol() != '.') return false;
+			}
+		}
+		return true;
+}
+
+bool Board::operator==(const Board& db){
+	return emptyBoard(db);
+}
+
 //Destruction Function -
 Board::~Board(){
 
