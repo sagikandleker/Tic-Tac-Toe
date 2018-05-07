@@ -10,7 +10,7 @@ public:
     Node();
     Node(char c);
 
-    char getSymbol();
+    char getSymbol() const;
     void setSymbol(char value);
 
     operator char();

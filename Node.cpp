@@ -18,7 +18,7 @@ Node::Node(char value){
 }
 
 
-char Node::getSymbol(){
+char Node::getSymbol() const{
     return this->symbol;
 }
 
