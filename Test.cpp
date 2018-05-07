@@ -1,7 +1,10 @@
 #define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
-#include "doctest.h"
+#include "doctest/doctest.h"
 
 #include "Board.h"
+
+#include <iostream>
+using namespace std;
 
 TEST_CASE("Testing Homework 4") {
 
@@ -10,3 +13,4 @@ TEST_CASE("Testing Homework 4") {
 
     board1[{0,0}] = 'X';
     cout << board1 << endl;
+}
