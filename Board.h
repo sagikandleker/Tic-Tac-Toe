@@ -30,7 +30,7 @@ public:
 	Board& operator=(const Board& db);
 
 	friend ostream& operator<<(ostream& os, Board const &b);
-	friend int operator==(Node& n, char value);
+	friend bool operator==(Node& n, char value);
 };
 
 inline ostream& operator<<(ostream& os, Board const &b) {
@@ -46,15 +46,14 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 	return os;
 }
 
-inline int operator==(Node& n, char value){
+inline bool operator==(Node& n, char value){
 
 	if(n.getSymbol() == value)
 	{
-		return 1;
+		return true;
 	}
 	else
 	{
-		return 0;
+		return false;
 	}
 }
-
