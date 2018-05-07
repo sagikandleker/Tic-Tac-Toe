@@ -11,14 +11,6 @@ Board::Board(int value){
 	{
 		mat[i] = new Node[value];
 	}
-
-	for(int i = 0; i < value; i++)
-	{
-		for(int j = 0; j < value; j++)
-		{
-			mat[i][j] = '.';
-		}
-	}
 }
 
 Board::Board(const Board& other){
