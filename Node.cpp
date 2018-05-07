@@ -29,6 +29,10 @@ void Node::setSymbol(char value){
 
 }
 
+Node::operator char(){
+    return this->symbol;
+}
+
 char Node::operator=(Node& n){
     return n.symbol;
 }

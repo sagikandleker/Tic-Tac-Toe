@@ -13,6 +13,8 @@ public:
     char getSymbol();
     void setSymbol(char value);
 
+    operator char();
+    
     char operator=(Node& n);
     Node& operator=(char value);
     Node& operator=(int value);
