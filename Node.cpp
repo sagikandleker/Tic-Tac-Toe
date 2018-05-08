@@ -6,15 +6,7 @@ Node::Node(){
 }
 
 Node::Node(char value){
-    if(value != 'X' && value != 'O' && value != '.')
-	{
-		throw IllegalCharException(value);
-	}
-    
-    else
-    {
-        this->symbol = value;
-    }
+    this->symbol = value;
 }
 
 
@@ -39,7 +31,7 @@ char Node::operator=(Node& n){
 }
 
 Node& Node::operator=(char value){
-    if(value != 'X' && value != 'O')
+    if(value != 'X' && value != 'O' && value != '.')
 	{
 		throw IllegalCharException(value);
 	}
