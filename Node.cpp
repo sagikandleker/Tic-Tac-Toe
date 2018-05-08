@@ -6,7 +6,7 @@ Node::Node(){
 }
 
 Node::Node(char value){
-    if(value != 'X' && value != 'O')
+    if(value != 'X' && value != 'O' && value!='.')
 	{
 		throw IllegalCharException(value);
 	}
