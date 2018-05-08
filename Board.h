@@ -37,15 +37,16 @@ public:
 inline ostream& operator<<(ostream& os, Board const &b) {
 
 	int n = b.size;
+	string s = "";
 
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < n; j++){
-			os << b.mat[i][j];
+			s+=b.mat[i][j];
 		}
-		 os << "\n";
+		s+="\n";
 	}
 
-	return os;
+	return os << s;
 }
 
 inline bool operator==(const Node& n, char value){
@@ -73,5 +74,4 @@ inline bool operator==(const Board& b1, const Board& b2){
 		}
 		return true;
 	}
-
 }

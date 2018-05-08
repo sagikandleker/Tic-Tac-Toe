@@ -15,19 +15,22 @@ Board::Board(int value){
 
 Board::Board(const Board& other){
 
-	this->size = other.size;
+	this->size = other.getSize();
 		mat = new Node*[size];
 
 		for(int i = 0; i < size ;i++)
 		{
 			mat[i] = new Node[size];
-
+		}
+		for(int i = 0; i < size ;i++)
+		{
 			for(int j = 0; j < size; j++)
 			{
 				mat[i][j] = other.mat[i][j];
 			}
-		}
-}
+		}	
+	}
+
 
 
 int Board::getSize() const{
@@ -68,7 +71,7 @@ Node& Board::operator[](list<int> index){
 Board& Board::operator=(char value){
 	{
 
-	if(value != 'X' && value != 'O' && value != '.')
+	if(value != '.')
 	{
 		throw IllegalCharException(value);
 	}
@@ -87,6 +90,20 @@ Board& Board::operator=(char value){
 
 
 Board& Board::operator=(const Board& db){
-	Board b{db};
-	return *this;
+	this->size = db.size;
+			mat = new Node*[size];
+
+			for(int i = 0; i < size ;i++)
+			{
+				mat[i] = new Node[size];
+			}
+
+			for(int i = 0; i < size; i++)
+			{
+				for(int j = 0; j < size; j++)
+				{
+					mat[i][j].setSymbol(db.mat[i][j].getSymbol());
+				}
+			}
+			return *this;
 }
