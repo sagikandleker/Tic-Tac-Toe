@@ -7,9 +7,9 @@ Board::Board(int value){
 	this->size = value;
 	mat = new Node*[value];
 
-	for(int i = 0; i < value ;i++)
+	for(int i = 0; i < size ;i++)
 	{
-		mat[i] = new Node[value];
+		mat[i] = new Node[size];
 	}
 }
 
@@ -21,17 +21,12 @@ Board::Board(const Board& other){
 		for(int i = 0; i < size ;i++)
 		{
 			mat[i] = new Node[size];
-		}
 
-		for(int i = 0; i < size; i++)
-		{
 			for(int j = 0; j < size; j++)
 			{
 				mat[i][j] = other.mat[i][j];
 			}
 		}
-
-
 }
 
 

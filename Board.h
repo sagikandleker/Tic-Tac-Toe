@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <list>
+#include <string>
 
 #include "Node.h"
 #include "CoordinateException.h"
@@ -18,13 +19,13 @@ public:
 	Node **mat;
 
 	Board(int value);
-	Board(const Board& b);
+	Board(const Board& other);
 	~Board();
 
 	int getSize() const;
 
-	Node& operator[](BoardIndex& index);
 	Node& operator[](list<int> index);
+	//Node& operator[](list<int> index);
 	Board& operator=(char value);
 
 	Board& operator=(const Board& db);
@@ -37,16 +38,16 @@ public:
 
 inline ostream& operator<<(ostream& os, Board const &b) {
 
-	int n = b.getSize();
-	string s="";
+	int n = b.size;
+
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < n; j++){
-			s+=b.mat[i][j];
+			os << b.mat[i][j];
 		}
-		 s+="\n";
+		 os << "\n";
 	}
-	
-	return os << s;
+
+	return os;
 }
 
 inline bool operator==(const Node& n, char value){
