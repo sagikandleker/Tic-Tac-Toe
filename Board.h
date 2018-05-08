@@ -39,7 +39,7 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 
 	for(int i = 0; i < n; i++){
 		for(int j = 0; j < n; j++){
-			cout << b.mat[i][j] << "\n";
+			cout << b.mat[i][j];
 		}
 		cout << "\n";
 	}
