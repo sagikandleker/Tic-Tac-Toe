@@ -73,7 +73,7 @@ Node& Board::operator[](list<int> index){
 Board& Board::operator=(char value){
 	{
 
-	if(value != 'X' && value != 'O' && value != '.')
+	if(value != '.')
 	{
 		throw IllegalCharException(value);
 	}
