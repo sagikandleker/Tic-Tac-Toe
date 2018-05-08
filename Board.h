@@ -51,4 +51,5 @@ inline bool operator==(const Node& n, char value){
 	if(n.getSymbol() == value){
 		return true;
 	}
+	return false;
 }
