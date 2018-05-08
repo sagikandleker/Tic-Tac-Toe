@@ -69,8 +69,8 @@ inline bool operator==(const Board& b1, const Board& b2){
 				}
 				
 			}
-			return true;
 		}
+		return true;
 	}
 
 }
