@@ -1,10 +1,9 @@
 #include "CoordinateException.h"
 
-IllegalCoordinateException::IllegalCoordinateException(int i, int j){
-	this->a = i;
-	this->b = j;
+IllegalCoordinateException::IllegalCoordinateException(BoardIndex index){
+	this->xy = index;
 }
 
-string IllegalCoordinateException::theCoordinate() const{
-	return to_string(this->a) + "," + to_string(this->b);
+BoardIndex IllegalCoordinateException::theCoordinate() const{
+	return this->xy;
 }

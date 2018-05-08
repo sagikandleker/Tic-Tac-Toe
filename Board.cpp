@@ -54,18 +54,21 @@ Board::~Board(){
 Node& Board::operator[](list<int> index){
 
 	int a = index.front();
-	int b = index.back();
+	int b = index.front();
 
-	if(a < size && a >= 0 && b < size && b >= 0)
+	BoardIndex bIndex(a,b);
+
+	if(bIndex.i < size && bIndex.i >= 0 && bIndex.j < size && bIndex.j >= 0)
 	{
-		return this->mat[a][b];
+		return mat[bIndex.i][bIndex.j];
 	}
 
 	else
 	{
-		throw IllegalCoordinateException(a,b);
+		throw IllegalCoordinateException(bIndex);
 	}
 }
+
 
 Board& Board::operator=(char value){
 	{

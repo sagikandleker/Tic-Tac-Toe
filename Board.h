@@ -23,6 +23,7 @@ public:
 
 	int getSize() const;
 
+	Node& operator[](BoardIndex& index);
 	Node& operator[](list<int> index);
 	Board& operator=(char value);
 
@@ -33,7 +34,6 @@ public:
 	friend bool operator==(const Board& b1, const Board& b2);
 
 };
-
 
 inline ostream& operator<<(ostream& os, Board const &b) {
 
@@ -61,7 +61,8 @@ inline bool operator==(const Board& b1, const Board& b2){
 	if(b1.getSize() != b2.getSize()){
 		return false;
 	}
-	else{
+	else
+	{
 		for(int i = 0; i < b1.getSize(); i++){
 			for(int j = 0; j < b1.getSize(); j++){
 				if(b1.mat[i][j].getSymbol() != b2.mat[i][j].getSymbol()){

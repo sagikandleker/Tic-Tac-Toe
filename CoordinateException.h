@@ -1,16 +1,13 @@
-
-#include <iostream>
+#pragma once
+#include "BoardIndex.h"
 #include <exception>
-#include <string>
-
-using namespace std;
 
 class IllegalCoordinateException : public exception{
-	int a,b;
+	BoardIndex xy;
 
 	public:
 
-		IllegalCoordinateException(int i, int j);
-		string theCoordinate() const;
+		IllegalCoordinateException(BoardIndex index);
+		BoardIndex theCoordinate() const;
 
 };
