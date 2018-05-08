@@ -16,7 +16,6 @@ public:
     
 	Node **mat;
 
-
 	Board(int value);
 	Board(const Board& b);
 	~Board();
