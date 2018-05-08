@@ -30,7 +30,6 @@ public:
 	Board& operator=(const Board& db);
 
 	friend ostream& operator<<(ostream& os, Board const &b);
-	friend bool operator==(const Node& n, char value);
 	friend bool operator==(const Board& b1, const Board& b2);
 
 };
@@ -49,13 +48,6 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 	return os<<s;
 }
 
-inline bool operator==(const Node& n, char value){
-
-	if(n.getSymbol() == value){
-		return true;
-	}
-	return false;
-}
 
 inline bool operator==(const Board& b1, const Board& b2){
 
@@ -75,3 +67,4 @@ inline bool operator==(const Board& b1, const Board& b2){
 	}
 	return true;
 }
+
