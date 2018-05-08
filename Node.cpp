@@ -33,10 +33,10 @@ Node::operator char(){
     return this->symbol;
 }
 
-/*
+
 char Node::operator=(Node& n){
     return n.symbol;
-}*/
+}
 
 Node& Node::operator=(char value){
     if(value != 'X' && value != 'O')
@@ -50,7 +50,7 @@ Node& Node::operator=(char value){
     return *this;
 }
 
-/*
+
 Node& Node::operator=(int value){
     if(value != 88 && value != 79)
 	{
@@ -61,7 +61,7 @@ Node& Node::operator=(int value){
         this->symbol = value;
     }
     return *this;
-}*/
+}
 
 Node& Node::operator=(const Node& n){
     this->symbol = n.symbol;
