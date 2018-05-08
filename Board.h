@@ -45,8 +45,8 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 		}
 		 s+="\n";
 	}
-		
-	return os<<s;
+	
+	return os << s;
 }
 
 inline bool operator==(const Node& n, char value){

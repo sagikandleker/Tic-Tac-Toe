@@ -54,7 +54,7 @@ Board::~Board(){
 Node& Board::operator[](list<int> index){
 
 	int a = index.front();
-	int b = index.front();
+	int b = index.back();
 
 	BoardIndex bIndex(a,b);
 
