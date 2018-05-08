@@ -2,8 +2,6 @@ CXX=g++
 CXXFLAGS=-std=c++17
 
 all: Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
-	$(CXX) $(CXXFLAGS) Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
-	./a.exe
 
 Board.o: Board.cpp Board.h
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
