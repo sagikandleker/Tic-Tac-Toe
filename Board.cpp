@@ -34,6 +34,7 @@ Board::Board(const Board& other){
 
 }
 
+
 int Board::getSize() const{
 	return this->size;
 }

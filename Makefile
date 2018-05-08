@@ -3,6 +3,13 @@ CXXFLAGS=-std=c++17
 
 all: Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
 
+run: Main.o Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
+	$(CXX) $(CXXFLAGS) Main.o Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
+	./a.exe
+
+Main.o: Main.cpp
+	$(CXX) $(CXXFLAGS) -c Main.cpp -o Main.o
+
 Board.o: Board.cpp Board.h
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
 
