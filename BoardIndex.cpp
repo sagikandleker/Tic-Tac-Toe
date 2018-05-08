@@ -17,3 +17,16 @@ int BoardIndex::getI(){
 int BoardIndex::getJ(){
     return this->j;
 }
+
+BoardIndex::BoardIndex(const BoardIndex& other)
+{
+    i = other.i;
+    j = other.j;
+}
+
+BoardIndex& BoardIndex::operator=(const BoardIndex& index)
+{
+    i = index.i;
+    j = index.j;
+    return *this;
+}

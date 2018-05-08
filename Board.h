@@ -25,9 +25,7 @@ public:
 	int getSize() const;
 
 	Node& operator[](list<int> index);
-	//Node& operator[](list<int> index);
 	Board& operator=(char value);
-
 	Board& operator=(const Board& db);
 
 	friend ostream& operator<<(ostream& os, Board const &b);

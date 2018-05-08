@@ -13,6 +13,9 @@ class BoardIndex
         int getI();
         int getJ();
 
+        BoardIndex(const BoardIndex& other);
+        BoardIndex& operator=(const BoardIndex& index);
+
         friend ostream& operator<<(ostream& os, BoardIndex n);
 };
 
