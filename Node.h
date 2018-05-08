@@ -22,7 +22,7 @@ public:
     Node& operator=(const Node& n);
 
     friend ostream& operator<<(ostream& os, Node& n);
-    friend bool operator==(const Node n, const char c);
+    friend bool operator==(const Node& n, const char c);
     friend bool operator==(const Node& n1,const Node& n2);
 };
 
@@ -31,7 +31,7 @@ inline ostream& operator<<(ostream& os, Node& n){
 	return os << n.getSymbol();
 }
 
-inline bool operator==(const Node n, const char c){
+inline bool operator==(const Node& n, const char c){
 	if(n.getSymbol() == c)return true;
 	return false;
  }
