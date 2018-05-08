@@ -92,6 +92,20 @@ Board& Board::operator=(char value){
 
 
 Board& Board::operator=(const Board& db){
-	Board b{db};
-	return *this;
+	this->size = db.size;
+			mat = new Node*[size];
+
+			for(int i = 0; i < size ;i++)
+			{
+				mat[i] = new Node[size];
+			}
+
+			for(int i = 0; i < size; i++)
+			{
+				for(int j = 0; j < size; j++)
+				{
+					mat[i][j].setSymbol(db.mat[i][j].getSymbol());
+				}
+			}
+			return *this;
 }
