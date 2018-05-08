@@ -71,7 +71,7 @@ Node& Board::operator[](list<int> index){
 Board& Board::operator=(char value){
 	{
 
-	if(value != '.')
+	if(value != '.' && value != 'X' && value != 'O')
 	{
 		throw IllegalCharException(value);
 	}
@@ -79,7 +79,7 @@ Board& Board::operator=(char value){
 	{
 		for(int i = 0; i < this->size; i++){
 			for(int j = 0; j < this->size; j++){
-				this->mat[i][j].setSymbol(value);
+				this->mat[i][j].symbol = value;
 			}
 		}
 
@@ -91,6 +91,7 @@ Board& Board::operator=(char value){
 
 Board& Board::operator=(const Board& db){
 	this->~Board();
+	
 	this->size = db.size;
 			mat = new Node*[size];
 
@@ -103,7 +104,7 @@ Board& Board::operator=(const Board& db){
 			{
 				for(int j = 0; j < size; j++)
 				{
-					mat[i][j].setSymbol(db.mat[i][j].getSymbol());
+					mat[i][j].symbol = db.mat[i][j].symbol;
 				}
 			}
 			return *this;
