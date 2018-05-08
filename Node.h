@@ -29,5 +29,6 @@ inline ostream& operator<<(ostream& os, Node n){
     return os << n.getSymbol();
 }
 inline bool operator==(const Node n, const char c){
-	return n.getSymbol() == c;
+	if(n.getSymbol() == c)return true;
+	return false;
 }
