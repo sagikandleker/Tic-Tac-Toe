@@ -92,6 +92,7 @@ Board& Board::operator=(char value){
 
 
 Board& Board::operator=(const Board& db){
+	this->~Board();
 	this->size = db.size;
 			mat = new Node*[size];
 
