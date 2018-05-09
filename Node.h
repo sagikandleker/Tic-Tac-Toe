@@ -16,9 +16,7 @@ public:
 
     operator char();
     
-    char operator=(Node& n);
     Node& operator=(char value);
-    Node& operator=(int value);
     Node& operator=(const Node& n);
 
     friend ostream& operator<<(ostream& os, Node& n);
