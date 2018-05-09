@@ -62,6 +62,6 @@ Node& Node::operator=(int value){
 }
 
 Node& Node::operator=(const Node& n){
-    this->symbol = n.symbol;
+    this->setSymbol( n.getSymbol());
     return *this;
 }
