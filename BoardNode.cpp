@@ -1,35 +1,34 @@
 #include "BoardNode.h"
 #include "CharException.h"
 
-Node::Node(){
+Node::Node()
+{
     this->symbol = '.';
 }
 
-Node::Node(char value){
+Node::Node(char value)
+{
     this->symbol = value;
 }
 
-
-char Node::getSymbol() const{
+char Node::getSymbol() const
+{
     return this->symbol;
 }
 
-void Node::setSymbol(char value){
-
+void Node::setSymbol(char value)
+{
     this->symbol = value;
-
 }
 
-Node::operator char(){
+Node::operator char()
+{
     return this->symbol;
 }
 
-/*
-char Node::operator=(Node& n){
-    return n.symbol;
-}*/
 
-Node& Node::operator=(char value){
+Node& Node::operator=(char value)
+{
     if(value != 'X' && value != 'O' && value != '.')
 	{
 		throw IllegalCharException(value);
@@ -41,20 +40,8 @@ Node& Node::operator=(char value){
     return *this;
 }
 
-
-/*Node& Node::operator=(int value){
-    if(value != 88 && value != 79)
-	{
-		throw IllegalCharException(value);
-	}
-    else
-    {
-        this->symbol = value;
-    }
-    return *this;
-}*/
-
-Node& Node::operator=(const Node& n){
+Node& Node::operator=(const Node& n)
+{
     this->symbol = n.symbol;
     return *this;
 }

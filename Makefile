@@ -28,6 +28,6 @@ CoordinateException.o: CoordinateException.cpp CoordinateException.h
 clean:
 	rm *.o a.out
 
-test: Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
-	$(CXX) $(CXXFLAGS) Test.cpp -g Board.o BoardIndex.o Node.o CharException.o CoordinateException.o -o Test.o
+test: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o
+	$(CXX) $(CXXFLAGS) Test.cpp -g Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o -o Test.o
 	./Test.o

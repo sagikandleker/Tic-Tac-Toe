@@ -12,12 +12,10 @@ public:
 
     char getSymbol() const;
     void setSymbol(char value);
-
-    operator char();
     
-    //char operator=(Node& n);
+    operator char();
+
     Node& operator=(char value);
-    //Node& operator=(int value);
     Node& operator=(const Node& n);
 
     friend ostream& operator<<(ostream& os, Node& n);

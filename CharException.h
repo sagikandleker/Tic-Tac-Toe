@@ -4,7 +4,8 @@
 
 using namespace std;
 
-class IllegalCharException : public exception{
+class IllegalCharException : public exception
+{
 	char value;
 
 	public:

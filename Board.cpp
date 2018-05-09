@@ -2,8 +2,8 @@
 
 //Constructor Functions -
 
-Board::Board(int value){
-
+Board::Board(int value)
+{
 	this->size = value;
 	mat = new Node*[value];
 
@@ -13,44 +13,39 @@ Board::Board(int value){
 	}
 }
 
-Board::Board(const Board& other){
-
+Board::Board(const Board& other)
+{
 	this->size = other.getSize();
-		mat = new Node*[size];
+	mat = new Node*[size];
 
-		for(int i = 0; i < size ;i++)
-		{
-			mat[i] = new Node[size];
-		}
-		for(int i = 0; i < size ;i++)
-		{
-			for(int j = 0; j < size; j++)
-			{
-				mat[i][j] = other.mat[i][j];
-			}
-		}	
+	for(int i = 0; i < size ;i++)
+	{
+		mat[i] = new Node[size];
 	}
+	for(int i = 0; i < size ;i++)
+	{
+		for(int j = 0; j < size; j++)
+		{
+			mat[i][j] = other.mat[i][j];
+		}
+	}	
+}
 
-
-
-int Board::getSize() const{
+int Board::getSize() const
+{
 	return this->size;
 }
 
-
-//Destruction Function -
-Board::~Board(){
-
+Board::~Board()
+{
 	for(int i = 0; i < this->size; i++){
 		delete[] mat[i];
 	}
 	delete[] mat;
 }
 
-
-//Operators - 
-Node& Board::operator[](list<int> index){
-
+Node& Board::operator[](list<int> index)
+{
 	int a = index.front();
 	int b = index.back();
 
@@ -68,9 +63,8 @@ Node& Board::operator[](list<int> index){
 }
 
 
-Board& Board::operator=(char value){
-	{
-
+Board& Board::operator=(char value)
+{
 	if(value != '.' && value != 'X' && value != 'O')
 	{
 		throw IllegalCharException(value);
@@ -85,27 +79,26 @@ Board& Board::operator=(char value){
 
 	}
 	return *this;
-	}
 }
 
-
-Board& Board::operator=(const Board& db){
+Board& Board::operator=(const Board& db)
+{
 	this->~Board();
 	
 	this->size = db.size;
-			mat = new Node*[size];
+	mat = new Node*[size];
 
-			for(int i = 0; i < size ;i++)
-			{
-				mat[i] = new Node[size];
-			}
+	for(int i = 0; i < size ;i++)
+	{
+		mat[i] = new Node[size];
+	}
 
-			for(int i = 0; i < size; i++)
-			{
-				for(int j = 0; j < size; j++)
-				{
-					mat[i][j].setSymbol(db.mat[i][j].getSymbol());
-				}
-			}
-			return *this;
+	for(int i = 0; i < size; i++)
+	{
+		for(int j = 0; j < size; j++)
+		{
+			mat[i][j].setSymbol(db.mat[i][j].getSymbol());
+		}
+	}
+	return *this;
 }
