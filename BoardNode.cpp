@@ -1,4 +1,4 @@
-#include "Node.h"
+#include "BoardNode.h"
 #include "CharException.h"
 
 Node::Node(){
@@ -10,16 +10,15 @@ Node::Node(char value){
 }
 
 
-/*char Node::getSymbol() const{
+char Node::getSymbol() const{
     return this->symbol;
 }
-
 
 void Node::setSymbol(char value){
 
     this->symbol = value;
 
-}*/
+}
 
 Node::operator char(){
     return this->symbol;

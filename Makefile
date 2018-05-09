@@ -1,10 +1,10 @@
 CXX=g++
 CXXFLAGS=-std=c++17
 
-all: Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
+all: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o
 
-run: Main.o Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
-	$(CXX) $(CXXFLAGS) Main.o Board.o BoardIndex.o Node.o CharException.o CoordinateException.o
+run: Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o
+	$(CXX) $(CXXFLAGS) Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o
 	./a.exe
 
 Main.o: Main.cpp
@@ -16,8 +16,8 @@ Board.o: Board.cpp Board.h
 BoardIndex.o: BoardIndex.cpp BoardIndex.h
 	$(CXX) $(CXXFLAGS) -c BoardIndex.cpp -o BoardIndex.o
 
-Node.o: Node.cpp Node.h
-	$(CXX) $(CXXFLAGS) -c Node.cpp -o Node.o
+BoardNode.o: BoardNode.cpp BoardNode.h
+	$(CXX) $(CXXFLAGS) -c BoardNode.cpp -o BoardNode.o
 
 CharException.o: CharException.cpp CharException.h
 	$(CXX) $(CXXFLAGS) -c CharException.cpp -o CharException.o

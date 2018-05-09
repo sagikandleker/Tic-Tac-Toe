@@ -3,7 +3,7 @@
 #include <list>
 #include <string>
 
-#include "Node.h"
+#include "BoardNode.h"
 #include "CoordinateException.h"
 #include "CharException.h"
 #include "BoardIndex.h"
@@ -51,7 +51,7 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 
 inline bool operator==(const Node& n, char value){
 
-	if(n.symbol == value){
+	if(n.getSymbol() == value){
 		return true;
 	}
 	return false;
@@ -66,7 +66,7 @@ inline bool operator==(const Board& b1, const Board& b2){
 	{
 		for(int i = 0; i < b1.getSize(); i++){
 			for(int j = 0; j < b1.getSize(); j++){
-				if(b1.mat[i][j].symbol != b2.mat[i][j].symbol){
+				if(b1.mat[i][j].getSymbol() != b2.mat[i][j].getSymbol()){
 					return false;
 				}
 				

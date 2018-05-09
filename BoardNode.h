@@ -4,16 +4,14 @@
 using namespace std;
 
 class Node{
-
-
-
+char symbol;
 public:
-    char symbol;
+    
     Node();
     Node(char c);
 
-    //char getSymbol() const;
-    //void setSymbol(char value);
+    char getSymbol() const;
+    void setSymbol(char value);
 
     operator char();
     
@@ -22,16 +20,17 @@ public:
     //Node& operator=(int value);
     Node& operator=(const Node& n);
 
-    friend ostream& operator<<(ostream& os, Node n);
+    friend ostream& operator<<(ostream& os, Node& n);
     friend bool operator==(const Node n, const char value);
 };
 
-inline ostream& operator<<(ostream& os, Node n)
+inline ostream& operator<<(ostream& os, Node& n)
 {
-    return os << n.symbol;
+    os << n.getSymbol();
+    return os;
 }
 
 inline bool operator==(const Node n, const char value)
 {
-    return n.symbol == value;
+    return n.getSymbol() == value;
 }

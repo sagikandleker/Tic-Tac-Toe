@@ -79,7 +79,7 @@ Board& Board::operator=(char value){
 	{
 		for(int i = 0; i < this->size; i++){
 			for(int j = 0; j < this->size; j++){
-				this->mat[i][j].symbol = value;
+				this->mat[i][j].setSymbol(value);
 			}
 		}
 
@@ -104,7 +104,7 @@ Board& Board::operator=(const Board& db){
 			{
 				for(int j = 0; j < size; j++)
 				{
-					mat[i][j].symbol = db.mat[i][j].symbol;
+					mat[i][j].setSymbol(db.mat[i][j].getSymbol());
 				}
 			}
 			return *this;
