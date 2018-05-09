@@ -14,7 +14,7 @@ Board::Board(int value){
 }
 
 Board::Board(const Board& other){
-
+	this->~Board();
 	this->size = other.size;
 		mat = new Node*[size];
 
