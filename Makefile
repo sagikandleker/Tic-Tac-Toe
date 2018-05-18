@@ -1,10 +1,10 @@
 CXX=g++
 CXXFLAGS=-std=c++17
 
-all: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o Player.o DummyPlayers.o TicTacToe.o
+all: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o Player.o DummyPlayers.o TicTacToe.o Champion.o
 
-run: Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o
-	$(CXX) $(CXXFLAGS) Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o
+run: Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o Champion.o
+	$(CXX) $(CXXFLAGS) Main.o Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o Champion.o
 	./a.exe
 
 Main.o: Main.cpp
@@ -34,9 +34,12 @@ DummyPlayers.o: DummyPlayers.cpp DummyPlayers.h
 TicTacToe.o: TicTacToe.cpp TicTacToe.h
 	$(CXX) $(CXXFLAGS) -c TicTacToe.cpp -o TicTacToe.o
 
+Champion.o: Champion.cpp Champion.h
+	$(CXX) $(CXXFLAGS) -c Champion.cpp -o Champion.o
+
 clean:
 	rm *.o a.out
 
-test: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o DummyPlayers.o Player.o TicTacToe.o
-	$(CXX) $(CXXFLAGS) Test.cpp -g Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o DummyPlayers.o Player.o TicTacToe.o -o Test.o
+test: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o DummyPlayers.o Player.o TicTacToe.o Champion.o
+	$(CXX) $(CXXFLAGS) Test.cpp -g Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o DummyPlayers.o Player.o TicTacToe.o Champion.o -o Test.o
 	./Test.o
