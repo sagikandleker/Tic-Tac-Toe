@@ -35,29 +35,29 @@ private:
 
 	bool fullDiagonal(char c){
 		int count=0;
-		for(int i=0;i<gboard.getSize();i++)
+		for(int i=0;i<gboard.size();i++)
 		{
 			if(c==gboard.mat[i][i].getSymbol())count++;
 		}
-		if(count == gboard.getSize()) return true;
+		if(count == gboard.size()) return true;
 		count = 0;
 
-		for(int i=gboard.getSize()-1;i>=0;i--)
+		for(int i=gboard.size()-1;i>=0;i--)
 		{
 			if(c==gboard.mat[i][i].getSymbol())count++;
 		}
-		if(count == gboard.getSize()) return true;
+		if(count == gboard.size()) return true;
 		return false;
 	}
 
 	bool Col(char c){
 
 		int count = 0;
-		for(int i = 0; i < gboard.getSize(); i++){
-			for(int j = 0; j < gboard.getSize(); j++){
+		for(int i = 0; i < gboard.size(); i++){
+			for(int j = 0; j < gboard.size(); j++){
 				if(gboard.mat[i][j].getSymbol() == c) count++;
 			}
-			if(count == gboard.getSize()) return true;
+			if(count == gboard.size()) return true;
 			count = 0;
 		}
 		return false;
@@ -65,11 +65,11 @@ private:
 
 	bool Row(char c){
 		int count = 0;
-		for(int i = 0; i < gboard.getSize(); i++){
-			for(int j = 0; j < gboard.getSize(); j++){
+		for(int i = 0; i < gboard.size(); i++){
+			for(int j = 0; j < gboard.size(); j++){
 				if(gboard.mat[j][i].getSymbol() == c) count++;
 			}
-			if(count == gboard.getSize()) return true;
+			if(count == gboard.size()) return true;
 			count = 0;
 		}
 		return false;

@@ -16,12 +16,13 @@ class Board{
 public:
     
 	Node **mat;
-	int size;
+	int n;
+
 	Board(int value);
 	Board(const Board& other);
 	~Board();
 
-	int getSize() const;
+	int size() const;
 
 	Node& operator[](list<int> index);
 	Node& operator[](const BoardIndex& coor) const;
@@ -35,7 +36,7 @@ public:
 
 inline ostream& operator<<(ostream& os, Board const &b) {
 
-	int n = b.size;
+	int n = b.size();
 	string s = "";
 
 	for(int i = 0; i < n; i++){
@@ -51,13 +52,13 @@ inline ostream& operator<<(ostream& os, Board const &b) {
 
 inline bool operator==(const Board& b1, const Board& b2){
 
-	if(b1.getSize() != b2.getSize()){
+	if(b1.size() != b2.size()){
 		return false;
 	}
 	else
 	{
-		for(int i = 0; i < b1.getSize(); i++){
-			for(int j = 0; j < b1.getSize(); j++){
+		for(int i = 0; i < b1.size(); i++){
+			for(int j = 0; j < b1.size(); j++){
 				if(b1.mat[i][j].getSymbol() != b2.mat[i][j].getSymbol()){
 					return false;
 				}
