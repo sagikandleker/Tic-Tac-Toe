@@ -2,7 +2,6 @@
 #include "Board.h"
 #include "Player.h"
 
-
 class TicTacToe{
 	Board gboard;
 	Player* w = nullptr;
