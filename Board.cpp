@@ -62,7 +62,23 @@ Node& Board::operator[](list<int> index)
 	}
 }
 
+Node& Board::operator[](const BoardIndex& coor) const
+{
+	int a = coor.i;
+	int b = coor.j;
 
+	BoardIndex bIndex(a,b);
+
+	if(bIndex.i < size && bIndex.i >= 0 && bIndex.j < size && bIndex.j >= 0)
+	{
+		return mat[bIndex.i][bIndex.j];
+	}
+
+	else
+	{
+		throw IllegalCoordinateException(bIndex);
+	}
+}
 Board& Board::operator=(char value)
 {
 	if(value != '.' && value != 'X' && value != 'O')

@@ -7,17 +7,16 @@
 #include "CoordinateException.h"
 #include "CharException.h"
 #include "BoardIndex.h"
+using Coordinate = BoardIndex;
 
 using namespace std;
 
 class Board{
 
-int size;
-
 public:
     
 	Node **mat;
-
+	int size;
 	Board(int value);
 	Board(const Board& other);
 	~Board();
@@ -25,6 +24,7 @@ public:
 	int getSize() const;
 
 	Node& operator[](list<int> index);
+	Node& operator[](const BoardIndex& coor) const;
 	Board& operator=(char value);
 	Board& operator=(const Board& db);
 
