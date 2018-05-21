@@ -5,16 +5,16 @@ BoardIndex::BoardIndex(){
     this->j = 0;
 }
 
-BoardIndex::BoardIndex(int x, int y){
+BoardIndex::BoardIndex(unsigned int x, unsigned int y){
     this->i = x;
     this->j = y;
 }
 
-int BoardIndex::getI(){
+unsigned int BoardIndex::getI(){
     return this->i;
 }
 
-int BoardIndex::getJ(){
+unsigned int BoardIndex::getJ(){
     return this->j;
 }
 

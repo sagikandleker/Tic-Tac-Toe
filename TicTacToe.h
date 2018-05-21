@@ -80,8 +80,8 @@ private:
 
 		try
 		{
-			//Board copyBoard = gboard;
-			cor = currentPlayer.play(gboard);
+			Board copyBoard = gboard;
+			cor = currentPlayer.play(copyBoard);
 		}
 		catch(...)
 		{
