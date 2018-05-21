@@ -40,12 +40,7 @@ private:
 			if(c==gboard.mat[i][i].getSymbol())count++;
 		}
 		if(count == gboard.size()) return true;
-		count = 0;
-		for(int i = 0, j = gboard.size()-1; i < gboard.size()|| j >= 0; i++, j--)
-		{
-					if(c==gboard.mat[i][j].getSymbol()) count++;
-		}
-		if(count == gboard.size()) return true;
+
 		return false;
 	}
 
