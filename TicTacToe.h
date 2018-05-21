@@ -44,7 +44,7 @@ private:
 
 		for(int i=gboard.size()-1;i>=0;i--)
 		{
-			for(int j = 1; j < gboard.size(); j++){
+			for(int j = 0; j < gboard.size(); j++){
 				{
 					if(c==gboard.mat[i][j].getSymbol())count++;
 				}
