@@ -6,12 +6,12 @@ using namespace std;
 class BoardIndex
 {
     public:
-        unsigned int i;
-        unsigned int j;
+        int i;
+        int j;
         BoardIndex();
-        BoardIndex(unsigned int x, unsigned int y);
-        unsigned int getI();
-        unsigned int getJ();
+        BoardIndex(int x, int y);
+        int getI();
+        int getJ();
 
         BoardIndex(const BoardIndex& other);
         BoardIndex& operator=(const BoardIndex& index);
