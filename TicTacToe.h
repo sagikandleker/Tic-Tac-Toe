@@ -32,7 +32,8 @@ private:
 		return false;
 	}
 
-	bool fullDiagonal(char c){
+	bool fullDiagonal(char c)
+	{
 		int count=0;
 		for(int i=0;i<gboard.size();i++)
 		{
@@ -43,9 +44,14 @@ private:
 
 		for(int i=gboard.size()-1;i>=0;i--)
 		{
-			if(c==gboard.mat[i][i].getSymbol())count++;
+			for(int j = 1; j < gboard.size(); j++){
+				{
+					if(c==gboard.mat[i][j].getSymbol())count++;
+				}
+
+			}
+			if(count == gboard.size()) return true;
 		}
-		if(count == gboard.size()) return true;
 		return false;
 	}
 
@@ -76,16 +82,17 @@ private:
 
 	void tryPlay(Player& currentPlayer, Player& otherPlayer)
 	{
-		BoardIndex cor{0,0};
+		Coordinate cor{0,0};
 
 		try
 		{
-			Board cBoard = gboard;
-			cor = currentPlayer.play(cBoard);
+			Board copyBoard = gboard;
+			cor = currentPlayer.play(copyBoard);
 		}
 		catch(...)
 		{
 			w = &otherPlayer;
+			return;
 		}
 
 		if(gboard[cor] == '.')

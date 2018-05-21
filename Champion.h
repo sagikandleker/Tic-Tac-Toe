@@ -6,7 +6,7 @@ class Champion : public Player {
 public:
     const string name() const override
     {
-        return "sagi, itay & roni";
+        return "Itay, Sagi & Roni";
     }
 
     const Coordinate play(const Board& board) override;
