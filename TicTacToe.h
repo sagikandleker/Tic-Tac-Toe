@@ -27,12 +27,12 @@ private:
 
 		if(Row(c)) return true;
 
-		if(fullDiagonal(c)) return true;
+		if(Diagonal(c)) return true;
 
 		return false;
 	}
 
-	bool fullDiagonal(char c)
+	bool Diagonal(char c)
 	{
 		int count=0;
 		for(int i=0;i<gboard.size();i++)
@@ -41,12 +41,23 @@ private:
 		}
 		if(count == gboard.size()) return true;
 		count = 0;
-		for(int i = 0, j = gboard.size()-1; i < gboard.size(), j >= 0; i++, j--)
+		/*for(int i = 0, j = gboard.size()-1; i < gboard.size(), j >= 0; i++, j--)
 		{
 			if(c==gboard.mat[i][j].getSymbol()) count++;
 		}
 		if(count == gboard.size()) return true;
-		return false;
+		return false;*/
+
+		for(int i = gboard.size()-1; i >= 0; i--)
+		{
+			for(int j = 0 ; j < gboard.size(); j++)
+			{
+				if(c==gboard.mat[i][j].getSymbol()) count++;
+			}
+			if(count == gboard.size()) return true;
+		}
+	return false;
+
 	}
 
 	bool Col(char c){
