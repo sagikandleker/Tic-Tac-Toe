@@ -57,8 +57,9 @@ private:
 			if(count == gboard.size()) return true;
 		}*/
 
-		for(int i = 0, j = gboard.size()-1; i < gboard.size() && j >= 0; i++, j--){
-			if(c == gboard.mat[i][j].getSymbol()) count++;
+		for(int i = 0, j = gboard.size()-1; i < gboard.size() && j >= 0; i++, j--)
+		{
+			if(c == gboard.mat[j][i].getSymbol()) count++;
 		}
 		if(count == gboard.size()) return true;
 		return false;
