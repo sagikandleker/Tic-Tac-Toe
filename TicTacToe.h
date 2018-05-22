@@ -39,34 +39,27 @@ private:
 		{
 			if(c==gboard.mat[i][i].getSymbol())count++;
 		}
-		if(count == gboard.size()) return true;
+		if(count == gboard.size())
+		{
+			return true;
+		}
+		else
+		{
 		count = 0;
-		/*for(int i = 0, j = gboard.size()-1; i < gboard.size(), j >= 0; i++, j--)
-		{
-			if(c==gboard.mat[i][j].getSymbol()) count++;
-		}
-		if(count == gboard.size()) return true;
-		return false;*/
 
-		/*for(int i = gboard.size()-1; i >= 0; i--)
-		{
-			for(int j = 0 ; j < gboard.size(); j++)
+			for(int i = 0, j = gboard.size()-1; i < gboard.size() && j >= 0; i++, j--)
 			{
-				if(c==gboard.mat[i][j].getSymbol()) count++;
+				if(c == gboard.mat[i][j].getSymbol()) count++;
 			}
-			if(count == gboard.size()) return true;
-		}*/
-
-		for(int i = 0, j = gboard.size()-1; i < gboard.size() && j >= 0; i++, j--)
-		{
-			if(c == gboard.mat[j][i].getSymbol()) count++;
+			if(count == gboard.size())
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
 		}
-		if(count == gboard.size()) return true;
-		return false;
-
-
-	return false;
-
 	}
 
 	bool Col(char c){
