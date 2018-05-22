@@ -21,6 +21,5 @@ char myChar;
     virtual const std::string name() const = 0;
     virtual const Coordinate play(const Board& board) = 0;
 
-    virtual ~Player(){}
 };
 
