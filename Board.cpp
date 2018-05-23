@@ -15,9 +15,9 @@ Board::Board(int value)
 
 Board::Board(const Board& other)
 {
-	if(size()>0){
+	/*if(size()>0){
 		this->~Board();
-	}
+	}*/
 	this->n = other.size();
 	mat = new Node*[n];
 
