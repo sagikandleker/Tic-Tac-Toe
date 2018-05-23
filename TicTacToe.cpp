@@ -7,7 +7,7 @@ void TicTacToe::play(Player& xPlayer, Player& oPlayer)
     oPlayer.setChar('O');
     gboard = '.';
     
-    int size = (gboard.size()-1) * (gboard.size()-1);
+    int size = (gboard.size()) * (gboard.size());
 
     for(int i = 0; i < size; i++)
     {
