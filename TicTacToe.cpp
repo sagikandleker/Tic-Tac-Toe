@@ -11,6 +11,7 @@ void TicTacToe::play(Player& xPlayer, Player& oPlayer)
     while(1)
     {
         tryPlay(xPlayer, oPlayer);
+        steps++;
         if(w) break;
         if(steps == (gboard.size())*(gboard.size()))
         {
@@ -18,6 +19,8 @@ void TicTacToe::play(Player& xPlayer, Player& oPlayer)
             break;
         } 
         tryPlay(oPlayer, xPlayer);
+        steps++;
         if(w) break;
     }
+    if(!w) w = &oPlayer;
 }
