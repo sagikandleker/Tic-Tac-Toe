@@ -93,8 +93,8 @@ private:
 
 		try
 		{
-			Board copyBoard = gboard;
-			cor = currentPlayer.play(copyBoard);
+			//Board copyBoard = gboard;
+			cor = currentPlayer.play(gboard);
 		}
 		catch(...)
 		{
@@ -104,7 +104,7 @@ private:
 
 		if(gboard[cor] == '.')
 		{
-			gboard[cor] = currentPlayer.getChar();
+			gboard[cor].setSymbol(currentPlayer.getChar());
 		}
 		else
 		{
