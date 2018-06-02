@@ -158,7 +158,7 @@ public:
 string Board::draw(int val){
 	const int dimx = val;
 	const int dimy = val;
-	string filename="cpp.ppm";
+	string filename="cpp"+to_string(n)+".ppm";
 	ofstream imageFile(filename, ios::out | ios::binary);
 	imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
 	RGB image[dimx*dimy];
