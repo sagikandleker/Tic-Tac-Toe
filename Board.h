@@ -2,6 +2,7 @@
 #include <iostream>
 #include <list>
 #include <string>
+#include <fstream>
 
 #include "BoardNode.h"
 #include "CoordinateException.h"
@@ -17,7 +18,10 @@ public:
     
 	Node **mat;
 	int n;
-
+	Board(){
+		n=0;
+		mat=NULL;
+	}
 	Board(int value);
 	Board(const Board& other);
 	~Board();
@@ -28,9 +32,13 @@ public:
 	Node& operator[](const BoardIndex& coor) const;
 	Board& operator=(char value);
 	Board& operator=(const Board& db);
+	Board& operator=(int value);
 
 	friend ostream& operator<<(ostream& os, Board const &b);
 	friend bool operator==(const Board& b1, const Board& b2);
+
+	friend istream& operator>>(istream& is, Board &b);
+	string draw(int val);
 
 };
 
@@ -67,4 +75,27 @@ inline bool operator==(const Board& b1, const Board& b2){
 		}
 		return true;
 	}
+}
+
+inline istream& operator>>(istream& is, Board &b){
+	string f;
+	bool once = true;
+	int i = 0;
+	while(getline(cin,f))
+	{
+		if(once)
+			{
+				b=(int)f.length();
+				once=false;
+			}
+
+		for(unsigned int j=0;j<f.length();j++)
+			{
+				b[{i,(int)j}]=f.at((int)j);
+			}
+			i++;
+	}
+	
+
+return is;
 }
