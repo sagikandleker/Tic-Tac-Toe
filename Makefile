@@ -6,9 +6,6 @@ all: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o Play
 run: Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o Champion.o
 	$(CXX) $(CXXFLAGS) Board.o BoardIndex.o BoardNode.o CharException.o CoordinateException.o  Player.o DummyPlayers.o TicTacToe.o Champion.o -o a.out
 
-Main.o: Main.cpp
-	$(CXX) $(CXXFLAGS) -c Main.cpp -o Main.o
-
 Board.o: Board.cpp Board.h
 	$(CXX) $(CXXFLAGS) -c Board.cpp -o Board.o
 
