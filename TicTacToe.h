@@ -20,6 +20,15 @@ public:
 
 private:
 
+	bool fullboard(){
+		for(int i=0; i<gboard.size();i++){
+			for(int j=0; j<gboard.size();j++){
+				if(gboard[{i,j}]=='.') return false;
+			}
+		}
+		return true;
+	}
+	
 	bool isWinner(char c)
 	{
 

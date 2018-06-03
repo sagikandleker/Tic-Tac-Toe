@@ -10,6 +10,7 @@ void TicTacToe::play(Player& xPlayer, Player& oPlayer)
 
     while(1)
     {
+        if(fullboard() && w==nullptr){w=&oPlayer; break;}
         tryPlay(xPlayer, oPlayer);
         steps++;
         if(w) break;
