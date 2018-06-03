@@ -162,7 +162,10 @@ string Board::draw(int val){
 	int k=1;
 	string filename="cpp"+to_string(k)+".ppm";
 	//ofstream imageFile(filename, ios::out | ios::binary);
-	while(ifstream(filename)){k++;}
+	while(ifstream(filename)){
+		k++;
+		string filename="cpp"+to_string(k)+".ppm";
+	}
 	ofstream imageFile(filename, ios::out | ios::binary);
 	imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
 	RGB image[dimx*dimy];
