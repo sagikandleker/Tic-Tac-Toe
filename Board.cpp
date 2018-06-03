@@ -163,8 +163,7 @@ string Board::draw(int val){
 	string filename="cpp"+to_string(k)+".ppm";
 	//ofstream imageFile(filename, ios::out | ios::binary);
 	while(ifstream(filename)){
-		k++;
-		string filename="cpp"+to_string(k)+".ppm";
+		filename="cpp"+to_string(++k)+".ppm";
 	}
 	ofstream imageFile(filename, ios::out | ios::binary);
 	imageFile << "P6" << endl << dimx <<" " << dimy << endl << 255 << endl;
